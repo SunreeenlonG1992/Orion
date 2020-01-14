@@ -18,6 +18,11 @@ System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.
 
 Excel.Application xlApp = new Excel.Application(); 
 
+//获取已经打开的excel
+
+Excel.Application xlApp = (Application)Marshal.GetActiveObject("Excel.Application");
+Excel.Workbooks xlBooks = xlApp.Workbooks;
+
 //设置是否显示警告窗体 
 
 excelApp.DisplayAlerts = false; 
